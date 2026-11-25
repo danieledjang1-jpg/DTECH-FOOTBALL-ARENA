@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DTECH Football Arena</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">D</span>
+          <div><strong>DTECH</strong><small>FOOTBALL ARENA</small></div>
+        </div>
+        <div class="top-label">ARCADE FOOTBALL • LOCAL PLAY</div>
+        <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">
+          🔊 Sound: On
+        </button>
+      </header>
+
+      <section id="menu" class="menu-screen">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR PITCH. YOUR MOMENT.</p>
+          <h1>WELCOME TO<br /><span>FOOTBALL ARENA</span></h1>
+          <p class="intro">
+            Take control, build an attack and beat the computer in a fast
+            5-a-side football match.
+          </p>
+          <div class="setup-row">
+            <label
+              >YOUR TEAM
+              <select id="teamSelect">
+                <option value="blue">DTECH United</option>
+                <option value="red">Lions FC</option>
+                <option value="green">Emerald City</option>
+              </select>
+            </label>
+            <label
+              >MATCH LENGTH
+              <select id="durationSelect">
+                <option value="90">90 seconds</option>
+                <option value="120" selected>2 minutes</option>
+                <option value="180">3 minutes</option>
+              </select>
+            </label>
+          </div>
+          <button id="startBtn" class="primary-btn">
+            KICK OFF <span>→</span>
+          </button>
+          <p class="tiny-note">
+            No installation required. Runs in your browser.
+          </p>
+        </div>
+        <div class="hero-art">
+          <div class="glow-ball">⚽</div>
+          <div class="hero-stadium"><span>HOME</span><span>AWAY</span></div>
+          <div class="hero-score"><b>0</b><i>:</i><b>0</b></div>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="game-screen hidden">
+        <div class="scorebar">
+          <div class="team-score">
+            <span id="homeBadge" class="badge blue">D</span>
+            <div>
+              <strong id="homeName">DTECH UNITED</strong><small>HOME</small>
+            </div>
+          </div>
+          <div class="score-center">
+            <div class="score-numbers">
+              <span id="homeScore">0</span><i>–</i><span id="awayScore">0</span>
+            </div>
+            <div id="matchClock">02:00</div>
+          </div>
+          <div class="team-score away">
+            <div><strong>CPU ALL-STARS</strong><small>AWAY</small></div>
+            <span class="badge red">C</span>
+          </div>
+        </div>
+        <div class="pitch-wrap">
+          <canvas
+            id="pitch"
+            width="1000"
+            height="620"
+            aria-label="Football match pitch"
+          ></canvas>
+          <div id="goalFlash" class="goal-flash hidden">GOAL!</div>
+          <div class="pitch-hint">
+            WASD / ARROWS: MOVE <b>SPACE: SHOOT</b> <b>SHIFT: SPRINT</b>
+            <b>Q: SWITCH PLAYER</b>
+          </div>
+        </div>
+        <div class="game-footer">
+          <div id="statusText">Kick-off! Move your player and attack.</div>
+          <div class="footer-actions">
+            <button id="pauseBtn" class="secondary-btn">Ⅱ Pause</button
+            ><button id="restartBtn" class="secondary-btn">↻ Restart</button
+            ><button id="menuBtn" class="secondary-btn">Main menu</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="result-screen hidden">
+        <div class="result-card">
+          <p class="eyebrow">FULL TIME</p>
+          <h2 id="resultTitle">MATCH COMPLETE</h2>
+          <div class="result-score">
+            <span id="finalHome">0</span><i>:</i><span id="finalAway">0</span>
+          </div>
+          <p id="resultMessage">Good match!</p>
+          <button id="playAgainBtn" class="primary-btn">PLAY AGAIN →</button>
+          <button id="resultMenuBtn" class="secondary-btn">MAIN MENU</button>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        DTECH FOOTBALL ARENA <span>•</span> Built with HTML, CSS & JavaScript
+      </footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
